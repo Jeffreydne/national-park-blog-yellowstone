@@ -15,7 +15,7 @@
 
 ## Description
 
-[Visit the Deployed Site](https://jeffreydne.github.io/Jeff-Nelson-national-park-blog-yellowstone)
+[Visit the Deployed Site](https://jeffreydne.github.io/national-park-blog-yellowstone)
 
 I designed this project from scratch
 
@@ -52,4 +52,4 @@ During the making of this project I implemented HTML, CSS, and JavaScript. I str
 ---
 ## Credits
 
-The table of technology used  in this README.md was provided by the excellent staff at UC Berkeley Extension Full Stack Bootcamp
+The table of technology used in this README.md was modified from a template provided by the excellent staff at UC Berkeley Extension Full Stack Bootcamp
