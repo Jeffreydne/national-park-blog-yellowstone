@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="../resources/fontAwesome.css"> -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>About- Fun with the NPS</title>
+</head>
+<body class="mb-0">
+    <!--The fixed nav bar will stay fixed at top. THe navbar-brand will continue to show "Fun with National Parks" at all screen sizes while the 3 links will collapse into a hamburger using the div class collapse navbar-collapse and the id navIcon is used by data-target on the button (class navbar-toggler). Note the multiple divisions each with its own class used to make this happen with bootstrap. Class navBg is used to override the coloring of the navBar and footer-->
+    <header class="fixed-top">
+        <nav class="navbar navbar-dark navbar-expand-md navBg">
+            <div class="container">
+                <div class="imageContainer"><img src="../images/US-NPS-SmallLogo.png" class="rounded float-left logo" alt="National Park Service logo"></div> <!--NPS logo from URL https://wikipedia.tlm.cloud/wikipedia_en_computer_2017-04/A/National_Park_Service.html-->
+                <a href="#" class="navbar-brand ml-2">Fun with the National Parks</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navIcon" aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navIcon">
+                    <div class="navbar-nav ml-sm-auto">
+                        <a class="nav-item nav-link" href="../index.html">Home</a>
+                        <a class="nav-item nav-link" href="./about.html">About the park</a>
+                        <a class="nav-item nav-link" href="./quiz.html">Take the quiz</a>
+                    </div> <!--navbar nav-->
+                </div> <!--end collapsable navbar-->
+            </div>    <!-- end full navbar container -->
+        </nav>  <!--end Navbar-->
+    </header>
+    <!--Note-photos below are from either https://lightbox.tlm.cloud/ (indicated by comment after div stating "lightbox") 
+        or
+    https://wikipedia.tlm.cloud/wikipedia_en_computer_2017-04/A/Yellowstone_National_Park.html (indicated by comment after div stating "wikipedia").-->
+    <main class="container mt-5">
+        <h1 class="text-center pt-5 mt-5">Yellowstone National Park</h1>
+        <h3 class="text-center">This week's park is Yellowstone National Park.</h3>
+        <p class="blackFont">Below is a brief description of the history of Yellowstone as a park, followed by its geologic history, a description of the features of the park, then a description of the wildlife, and finally a story recounting a personal experience in the park. If any of these topics interest you just click on the "Read more" link below each section to open up additional information. If you want to take the quiz click on this button: &nbsp;<a href="./quiz.html"><button class ="btn btn-success" type="btn">Take Quiz</button></a>
+        </p>
+        <hr>
+        <!--The container below hold the various sections of the "About the park" page. The 1st paragraph of each section is in a <p> that will always be visible. The additional <p>s are given a class so that they will be hidden at 1st but when user clicks "Read more" link at bottom of each section, the hidden paragraphs of that class will show (and then hide when "Read less" is clicked). In addition the "Read more"/"Read less" aTags are styled slightly lighter in color, and underlined, with CSS, to show they are a link. There are related photos to the right at medium and larger screen sizes, and they are shown below each paragraph at smaller screen sizes. More photos are added when "Read more" is clicked and they disappear when "Read less" is clicked to keep the photos section to be approximately the same screen height as the text. Due to changes in photo sizing at various screen sizes some photos have different classes so as to remove them at specific screen sizes using media queries in CSS-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>Political history of the park</h5>
+                    <p class="blackFont">For at least 10,000 years prior to the first exploration of Yellowstone National Park by people of European origin, it was inhabited by Native Americans. The first explorers of European ancestry known to enter the region arrived in the early 19th century as part of the Lewis and Clark expedition. Over the following 65 years the United States government claimed political control over most of the land in what is now the continiental US, often using violent means to expel Native Americans from the places they had lived. Yellowstone was established as a national park in 1872. Native Americans were expelled from Yellowstone for the most part after it became a national park.</p>
+                    <p class="polHistAdd blackFont">The oldest known evidence of indiginous culture in the Yellowstone has been dated to approximately 11,000 years ago. In the early 1800s, when members of the Lewis and Clark expedition first explored the region that is now Yellowstone National Park, they encountered members of three different tribes; the Nez Perce, Crow and Shoshone. For a time Native Americans and whites coexisted and often traded with each other. As more white explorers settled on native lands violent clashes became more frequent. It was during the 1870s and 1880s that Native Americans were systematically forced to leave Yellowstone by the US Military.</p>
+                    <p class="polHistAdd blackFont">Theodore Roosevelt is known as the father of the National Park Service because he advocated for, and established, many new national parks. However, Yellowstone came into existence many years before Roosevelt was president. It was President Ulysses Grant who signed the law creating Yellowstone National Park as the very first national park in the US. Initially Yellowstone was managed by the US Army. As more national parks were added, especially during Teddy Roosevelt's years in office (1901-1908), the system became unwieldy.
+                    <p class="polHistAdd blackFont">However, it wasn't until 1916 that Woodrow Wilson signed legislation establishing the National Park Service (NPS), creating one system to oversee all of the national parks. Some other famous parks in the system include, Yosemite (in Calfornia), The Grand Canyon (located in Arizona), Bryce Canyon (in Utah), and the closest national park to Yellowstone, The Grand Teton National Park (located less than 100 miles to the south in Wyoming). Yellowstone is primarily in Wyoming, but also extends into Idaho and Montana. In modern times Yellowstone is one of the most visited national parks, with more than 4.2 million visitors in 2016. </p>
+                    <div class="mb-3"><a href="#" class="readMore" data-id="polHistAdd">Read more</a></div>
+                </div><!--end polHist paragraphs-->
+                <div class="col-md-3 mb-2">
+                    <div class="photoContainerPolHist photoCont ml-3 mt-5">
+                        <img class="aboutPhoto" src="../images/CapstoneNativeAmericanHunting.jpg" alt="NativeAmericanHuntingBuffalo">
+                    </div><!--wikipedia-->
+                    <div class="photoContainerPolHist photoCont ml-3 mt-5">
+                        <img class="aboutPhoto optionalPic" src="../images/capstoneImgSummerLake.jpeg" alt="summerLake">
+                    </div><!--lightbox-->
+                    <div class="photoContainerPolHist photoCont ml-3 mt-5">
+                        <img class="aboutPhoto polHistAdd" src="../images/CapstoneUnionPacificYellowstoneNationalPark1921.jpg" alt="classicYellowstonePoster">    
+                    </div><!--wikipedia-->
+                    <div class="photoContainerPolHist photoCont ml-3 mt-5">
+                        <img class="aboutPhoto polHistAdd" src="../images/CapstoneTeddyRoosevelt.jpg" alt="TeddYRoosevelt">    
+                    </div><!--wikipedia-->
+                    <div class="photoContainerPolHist ml-3 mt-5">
+                        <img class="aboutPhoto mediumScrnPic" src="../images/US-NPS-SmallLogo.png" alt="USNationalParkServiceLogo">    
+                    </div><!--wikipedia-->
+                </div><!--end polHist photos-->
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>Geologic history of the park</h5>
+                    <p class="blackFont">Although there are many spectacular characteristics that draw people to the park, Yellowstone is known especially for its hydrothermal features. These include steam vents, fumaroles, hot springs (some of which flow as creeks), colorful hot pools, and of course geysers. The plethora of hydrothermal features is due to the fact that the tectonic plate on which Yellowstone resides is riding over an area where the earth's crust is thin, which in turn forms a geologic hot spot.</p>
+                    <p class="geoHistAdd blackFont"> The crust is so thin in the area of Yellowstone due to a series of 3 giant volcanic explosions which led to a giant caldera, resulting in the thin crust and other physical features of the park. Each of these eruptions were 1000 times more powerful than the 1980 eruption of Mt. St. Helens. The first of these eruptions was approximately 2.1 million years ago, the second was about 1.3 million years ago, and the most recent eruption was around 640,000 years ago. In many parts of Yellowstone, a large plume of molten magma resides close to the earth's surface. This plume of hot magma in turn superheats ground water which then either seeps to the surface, forming hotsprings, fumaroles, and the many colorful hot pools, or when pressure builds up, the super heated water leads to geyser eruptions intermittently, which occur when the pressure reaches the eruption threshhold.</p>
+                    <div class="mb-3"><a href="#" class="readMore" data-id="geoHistAdd">Read more</a></div>
+                </div><!--end geoHist paragraphs-->
+                <div class="col-md-3 mb-2">   
+                    <div class="photoContainerGeoHist ml-3 mt-5">
+                        <img class="aboutPhoto" src="../images/CapstoneGrandPrismaticSpring.jpg" alt="GrandPrismaticSpring">
+                    </div><!--wikipedia-->
+                    <div class="photoContainerGeoHist photoCont ml-3 mt-5">
+                        <img class="aboutPhoto geoHistAdd" src="../images/capstoneCaldera.jpg" alt="CalderaDiagram">
+                    </div><!--lightbox-->
+                    <div class="photoContainerGeoHist photoCont ml-3 mt-5">
+                        <img class="aboutPhoto optionalPic geoHistAdd" src="../images/capstoneBuffaloAtSteamVent.jpg" alt="BuffaloAtSteamVent">
+                    </div><!--wikipedia-->
+                    <div class="photoContainerGeoHist ml-3 mt-5">
+                        <img class="aboutPhoto mediumScrnPic" src="../images/capstoneWinterNightSky.jpeg" alt="WinterNightSky">
+                    </div><!--lightbox-->
+                </div><!--end geoHist photos-->
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>Geologic features of the park</h5>
+                    <p class="blackFont">Three mountain ranges run through the park, with the highest point, atop Eagle Peak, being 11,358 feet. But most of the park consists of the broad plateaus of the caldera formed by the massive volcanic explosion approximately 640,000 years ago. That caldera leads to a very thin crust in the Yellowstone region which is why there are so many geothermal features in the park. Subsequent ice ages led to deep glacier carved valleys and canyons, such as the Grand Canyon of Yellowstone, which in turn led to an even greater thinning of the crust.</p>
+                    <p class="geoFeaturesAdd blackFont">Perhaps the best known feature of Yellowstone (or any other national park) is Old Faithful Geyser. Yellowstone actually has more than 300 geysers, which is more than half of the geysers known to exist in the entire world. Steamboat Geyser, the world's largest active geyser, is in Yellowstone. It erupts irregularly, every few months. What makes Old Faithful so famous is that it erupts quite regularly, at an interval of about every 90 minutes.</p>
+                     <p class="geoFeaturesAdd blackFont">As  noted above, the fact that Yellowstone lies over a geologic hotspot allows for the collection of the superheated water that is constantly seeping from underground to the surface. This in turn is responsible for the hydrothermal features such as the geysers and  hot springs, and also over time has led to the beautiful travertine terraces seen in the northwest end of the park.</p>
+                    <div class="mb-3"><a href="#" class="readMore" data-id="geoFeaturesAdd">Read more</a></div>
+                </div><!--end geoFeatures paragraphs-->
+                <div class="col-md-3 mb-2">
+                    <div class="photoContainerGeoFeatures photoCont ml-3 mt-5">
+                        <img class="aboutPhoto" src="../images/CapstoneYellowstoneFalls.jpg" alt="YellowstoneFalls">
+                    </div><!--wikipedia-->
+                    <div class="photoContainerGeoFeatures photoCont ml-3 mt-5">
+                        <img class="aboutPhoto geoFeaturesAdd" src="../images/capstoneSteamboatGeyser.jpg" alt="SteamboatGeyser">
+                    </div><!--wikipedia-->
+                    <div class="photoContainerGeoFeatures photoCont ml-3 mt-5">
+                        <img class="aboutPhoto mediumScrnPic" src="../images/capstoneMtnMoon.jpeg" alt="MountainMoon">
+                    </div><!--lightbox-->
+                </div><!--end geoFeatures photos-->
+            </div><!--end geoFeatures div-->
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>Wildlife in the park</h5>
+                    <p class="blackFont">Yellowstone has more diversity in terms of mammalian wildlife than any other national park in the continental United States, with over 60 different species. There are also many different species of birds, a large variety of fish, as well as a few species of amphibians and reptiles to further add to the diversity of fauna in Yellowstone.</p>
+                    <p class="wildlifeAdd blackFont">Large mammals often seen in the park include elk, black bears, foxes, and coyotes. Smaller populations of grizzly bears, bighorn sheep, mountain goats and pronghorns (a type of antelope) are also seen in Yellowstone. There are many smaller mammals including hares, river otters, beavers, badgers, martens, and weasels. Of note, while it is important to understand that wild animals can be dangerous, it is fairly uncommon to have injuries or deaths due to human-wildlife interactions. Bears are probably the most feared animal in the park, and yet only 8 people are known to have been killed by bears within the borders of Yellowstone, between 1872 and 2015.</p>
+                    <p class="wildlifeAdd blackFont">Two large mammals of note are bison and gray wolves. Bison, also known as buffalo, nearly went extinct as a species at the beginning of the 20th century. After agressive protection of these animals, they are now thriving in many parts of North America and there are several thousand bison in Yellowstone National Park alone. Gray wolves had a similar comeback story. They had been virtually eliminated from living in the wild in the entire United States, but were successfully reintroduced in Yellowstone in 1995 and now live throughout the park.</p>
+                    <p class="wildlifeAdd blackFont">There are over 300 species of birds that spend all or part of the year in Yellowstone. The most common bird species are in the songbird and woodpecker families. Other full-time residents include jays, ravens and Canada geese. The three species of raptors in the park, bald eagles, osprey and peregrine falcons, were all at one time endangered, and all have made great revoveries due to conservation efforts.</p>
+                    <p class="wildlifeAdd blackFont">Other wildlife in the park include many fish such as cutthroat trout, amphibians such as tiger salamanders, and reptiles such as painted turtles and prarie rattlesnakes. Botany enthusiasts can enjoy more than 1300 different species of flowering plants in the park as well as the large number of trees which are dominated by lodgepole pines and to a lesser extent by other conifer species.</p>
+                    <div class="mb-3"><a href="#" class="readMore" data-id="wildlifeAdd">Read more</a></div>
+                </div><!--end wildlife paragraphs-->
+                <div class="col-md-3 mb-2">
+                    <div class="photoContainerWildlife photoCont ml-3 mt-5">
+                        <img class="aboutPhoto" src="../images/CapstoneWolfRunning.jpg" alt="wolfRunning">
+                    </div>
+                    <div class="photoContainerWildlife photoCont ml-3 mt-5">
+                        <img class="aboutPhoto wildlifeAdd" src="../images/capstoneGrizzly.jpg" alt="grizzly">
+                    </div><!--lightbox-->
+                    <div class="photoContainerWildlife photoCont ml-3 mt-5">
+                        <img class="aboutPhoto optionalPic wildlifeAdd" src="../images/capstoneImgBuffalo.jpeg" alt="buffalo">
+                    </div><!--lightbox-->
+                    <div class="photoContainerWildlife photoCont ml-3 mt-5">
+                        <img class="aboutPhoto wildlifeAdd" src="../images/capstoneImgEagle.jpeg" alt="eagle">
+                    </div><!--lightbox-->
+                    <div class="photoContainerWildlife photoCont ml-3 mt-5">
+                        <img class="aboutPhoto wildlifeAdd" src="../images/capstonePaintedTurtle.jpg" alt="paintedTurtle">
+                    </div>
+                    <div class="photoContainerWildlife photoCont ml-3 mt-5">
+                        <img class="aboutPhoto mediumScrnPic" src="../images/capstonePronghorn.jpg" alt="pronghorn">
+                    </div><!--lightbox-->
+                </div><!--end wildlife photos-->
+            </div><!--end wildlife section-->
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>Favorite experiences in the park</h5>
+                    <p class="blackFont">In the spring of 1989 I bought a used car in New Hampshire and drove across the country to California. My most anticipated stop of that trip was Yellowstone National Park, a place I wanted to visit primarily to see the geyser called Old Faithful. When I arrived the beauty and majesty of the park surpassed all expectations.</p>
+                    <p class="myExperienceAdd blackFont">One particularly interesting aspect of my visit was witnessing the destruction that had been visited on Yellowstone by the great fire of 1988. That fire had raged for several months, less than a year before my arrival. Approximately 790,000 acres burned, which is approximately 40% of the park. The vast destruction was impressive but there was also amazing beauty, as colorful wildflowers were blossoming throughout the park, providing a beautiful contrast to the charred remains of tree stumps and shrubs.</p>
+                    <p class="myExperienceAdd blackFont">Of course 60% of the park was not affected by the fire and there was much unspoiled beauty to be found, for example in the northwest are the travertine terraces discussed above. One especially fun experience for me was to sit in a natural hot tub formed where a natural hot springs, called Hot Water Creek, joined a glacier fed river. Just at the spot of the merger I was able to bathe in water that was very warm, but not too hot.</p>
+                    <div class="mb-3"><a href="#" class="readMore" data-id="myExperienceAdd">Read more</a></div> 
+                </div> <!--end myExperience paragraphs-->
+                <div class="col-md-3 mb-2">
+                    <div class="photoContainerMyExperience photoCont ml-3 mt-5">
+                        <img class="aboutPhoto" src="../images/capstoneGeyser.jpg" alt="geyser">
+                    </div>
+                    <div class="photoContainerMyExperience photoCont ml-3 mt-5">
+                        <img class="aboutPhoto myExperienceAdd" src="../images/capstoneFire.jpg" alt="fireInYellowstone">
+                    </div><!--wikipedia-->
+                    <div class="photoContainerMyExperience photoCont ml-3 mt-5">
+                        <img class="aboutPhoto myExperienceAdd" src="../images/capstoneSummerMtn.jpeg" alt="summerMountain">
+                    </div><!--lightbox-->
+                </div><!--end myExperience photos-->
+            </div> <!--end myExperience section-->
+        </div> <!--end container-->
+    </main>  <!--end main-->
+    <footer>
+        <div class="container-fluid navBg text-light">
+            <div class="row justify-content-around mx-0 mb-0 mt-5 p-1">
+                <p class="col-12 col-sm-4 text-center">&trade; Fun with the National Parks <br>&copy; Jeffrey Nelson 2023</p>
+                <p class="col-12 col-sm-6 text-center">Contact: <br>
+                jeffrey.nelson.bn6295@code7370.org
+                </p>
+            </div>
+        </div> <!-- end footer container -->
+    </footer>  <!-- end footer -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha512-ldc1sPu1FZ8smgkgp+HwnYyVb1eRn2wEmKrDg1JqPEb02+Ei4kNzDIQ0Uwh0AJVLQFjJoWwG+764x70zy5Tv4A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/js/bootstrap.min.js" integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../javaScript/main.js"></script>
+</body>
+</html>

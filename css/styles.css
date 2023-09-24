@@ -1,0 +1,109 @@
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+/* default text and background colors established for body, navBar and main*/
+body {
+    color: #2b4d23;
+    color: hsl(109,37%,22%);
+    background-color: #3b6930;
+    background-color: hsl(109,37%,30%);
+    font-family: helvetica, sans-serif;
+}
+.blackFont {
+    color: black;
+}
+main {
+    background-color: #edb678;
+    background-color: hsl(32, 77%,70%);
+    margin-top: 5rem!important;
+}
+.navBg {
+    background-color: #2b4d23;
+    background-color: hsl(109,37%,22%);
+}
+.logo {
+    width: 38px;
+}
+/* transition and transform are used on the logo image so that when the logo area is hovered over it transform both enlarges- (scale(2) doubles size- and (translate(50px, 50px) moves logo down and to the right.  transition is used to make both of these happen over 1 sec and to ease in and out */
+.imageContainer img {
+    transition: all 1s ease-in-out;
+}
+.imageContainer:hover img {
+    transform: scale(2) translate(50px, 50px);
+}
+/* default photo size for all photos with class="photo"*/
+.photo {
+    width: 270px;
+    height: 180px;
+}
+/* All photos with aboutPhoto class (which are the photos in the "About the Park" page) will fill 100% of the width of each division that contains the photos in the right column at larger sizes, and below the "about" text at smaller sizes*/
+.aboutPhoto {
+    width: 100%;
+}
+/* form-control width 90% formats input boxes*/
+.form-control {
+    width: 90%;
+}
+/*btn-success class is used for btns and allows coloring to be the same as body background with a white border and box-shadow to help it pop out. */
+.btn-success {
+    color: #fff;
+    background-color: #3b6930;
+    border-color: #fff;
+    border-width: thin;
+    box-shadow: 1px 3px 5px 1px black;
+}
+a {
+    color: #3b6930;
+    text-decoration: underline;
+}
+/* The Register btn with id=#register is an <a> link but text underlining not desired so removed. The navbar-brand and nav-link also are <a> tags that do not need underlining.*/
+#register {
+    text-decoration: none;
+}
+.navbar-brand, .nav-link {
+    text-decoration: none;
+}
+a:hover {
+    color: #128b2f;
+}
+/* a division contains the submit btn which allows correct formatting using width and text-align: center. */
+#submitBtn {
+    width: 100%;
+    text-align: center;
+}
+/* The footer of the quiz was riding up at wider widths due to not enough content. The below mediaQuery fixes quiz footer at the 992px break. In addition, at larger screen widths (after the 992px break) there are too many photos on about page so the mediumScrnPic class hides pics to ameliorate this. */
+@media screen and (min-width: 992px) {
+    #quizFooter  {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    }
+    .mediumScrnPic {
+        display: none;
+    }
+}
+/* fixing the navBar causes the margin to cover the button disabling the Next question. By giving it position relative and Z-index 2- it lies over the footer which makes it functional again. */
+#qAdvance {
+    position: relative;
+    z-index: 2;
+}
+/* The quizResults header is underlined to make it better stand out. */
+#quizResults {
+text-decoration: underline;
+}
+/* At even larger screen widths (>1200px) there are too many photos on about page so the optionalPic class hides pics to ameliorate this even more. !important is used because javascript makes these photos appear when click more is clicked, and without important it won't disappear. */
+@media screen and (min-width: 1200px) {
+    .optionalPic  {
+    display: none!important;
+    }
+}
+/*The font size of NavBar main title is reduced to optomize formatting at smallest screen widths*/
+@media screen and (max-width: 425px) {
+    .navbar-brand  {
+    font-size: 1rem;
+    }
+}

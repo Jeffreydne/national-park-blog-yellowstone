@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="../resources/fontAwesome.css"> -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Quiz- Fun with the NPS</title>
+</head>
+<body class="mb-0">
+    <!--The fixed nav bar will stay fixed at top. THe navbar-brand will continue to show "Fun with National Parks" at all screen sizes while the 3 links will collapse into a hamburger using the div class collapse navbar-collapse and the id navIcon is used by data-target on the button (class navbar-toggler). Note the multiple divisions each with its own class used to make this happen with bootstrap. Class navBg is used to override the coloring of the navBar and footer-->
+    <header class="fixed-top">
+        <nav class="navbar navbar-dark navbar-expand-md navBg">
+            <div class="container">
+                <div class="imageContainer"><img src="../images/US-NPS-SmallLogo.png" class="rounded float-left logo" alt="National Park Service logo"></div> <!--NPS logo from URL https://wikipedia.tlm.cloud/wikipedia_en_computer_2017-04/A/National_Park_Service.html-->
+                <a href="#" class="navbar-brand ml-2">Fun with the National Parks</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navIcon" aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navIcon">
+                    <div class="navbar-nav ml-sm-auto">
+                        <a class="nav-item nav-link" href="../index.html">Home</a>
+                        <a class="nav-item nav-link" href="./about.html">About the park</a>
+                        <a class="nav-item nav-link" href="./quiz.html">Take the quiz</a>
+                    </div> <!--navbar nav-->
+                </div> <!--end collapsable navbar-->
+            </div>    <!-- end full navbar container -->
+        </nav>  <!--end Navbar-->
+    </header>
+    <main class="container mt-5">
+        <h1 class="text-center pt-5 mt-5" id="quizTime">It's quiz time!</h1>
+        <h2 class="text-center">This quiz is on Yellowstone National Park...</h2>
+        <div class="row justify-content-between">
+            <div  class="col-12 col-md-5"> <!-- "Quiz top": quiz explanation, with "startQuiz" btn, and quiz results display side by side at medium and larger sizes but are sequential on small screens. QuizStart class is used to hide this content when quiz has started. -->
+                <div class="pt-3 px-2">
+                    <p class="blackFont">This quiz consists of 10 questions. To answer, click on the letter corresponding to the correct response. You will have 20 seconds for each question. To keep track of your correct &amp; incorrect reponses, as well as when you time-out, look under the Quiz results header. <span class="quizStart">To start the quiz, click on the Start Quiz button below.</span></p>
+                    <button class="btn btn-success btn-lg mb-1 quizStart" type="button">
+                        Start Quiz
+                    </button>
+                </div> <!-- end quiz explanation, including start button (start button hides once pressed and reshows when quiz is over-->
+            </div>
+            <div  class="col-12 col-md-5">
+                <h3 id="quizResults">Quiz results</h3>
+                <h5>Questions attempted: <span id="qAtt"></span></h5>
+                <h5>Answered correctly: <span id="qAC"></span></h5>
+                <h5>Answered incorrectly: <span id="qAI"></span></h5>
+                <h5>Timed out: <span id="qTO"></span></h5>
+            </div> <!-- end quiz results -->
+        </div> <!--end quizTop (row justify-content-between)-->
+        <hr>
+        <div id="timer"> <!-- Timer is above main quiz section -->
+            <h3>Time left: <span class="h3 sec left" id="timeLeft">20 seconds</span></h3>
+        </div> <!-- end Timer-->
+        <div class="row justify-content-between pb-3">
+            <div  class="col-12 col-md-5"> <!-- Main quiz section includes qAndAnswerContainer and a photo section which appear side by side on medium and larger screens but are vertical on smaller screens-->
+                <div id="qAndAnswerContainer"> <!-- qAndAnswerContainer initially challenges user to play. Once startQuiz is pressed an event listener on main.js fires and a random question with 4 possible answers populates here. Once a question is answered with a click (firing a different event listener), or times out, user recieves an explanation of right, wrong or timed out and a next question button pops up. After 10th question, using javascript, there is a 5 second delay telling user results of last question and then after 5 seconds the final results and the start quiz button pops back up.-->
+                    <h5 class="placeholderQNum">Question:</h5>
+                    <div id="placeholderQ" class="mb-3 blackFont">Do you have what it takes to get a perfect score? To find out press the Start Quiz button above! Good luck!</div>
+                    <div class="mb-2 ansToHide"><button class="btn btn-success btn-sm mr-2" id="a0" type="button">A</button><span id="ansA" class="blackFont"></span></div>
+                    <div class="mb-2 ansToHide"><button class="btn btn-success btn-sm mr-2" id="a1" type="button">B</button><span id="ansB" class="blackFont"></span></div>
+                    <div class="mb-2 ansToHide"><button class="btn btn-success btn-sm mr-2" id="a2" type="button">C</button><span id="ansC" class="blackFont"></span></div>
+                    <div class="mb-5 ansToHide"><button class="btn btn-success btn-sm mr-2 mb-3" id="a3" type="button">D</button><span id="ansD" class="blackFont"></span></div><br>
+                </div>
+                <div><button class="btn btn-success btn-lg ml-3" id="qAdvance" type="button">Next Question</button></div>
+            </div> <!-- end qAndAnswer -->
+            <div  class="col-12 col-md-5 blackFont" id="quizPhoto">
+                <img class="photo" src="../images/capstoneAlpineLake.jpeg" alt="AlpineLake">
+            </div> <!-- end photo container-->
+        </div>
+    </main>  <!-- end main --> 
+    <footer id="quizFooter"> <!--quiz footer id added to allow formatting to fix footer to bottom of screen with mediaQueries (needed at very wide screen sizes) -->
+        <div class="container-fluid navBg text-light">
+            <div class="row justify-content-around mx-0 mb-0 mt-5 p-1">
+                <p class="col-12 col-sm-4 text-center">&trade; Fun with the National Parks <br>&copy; Jeffrey Nelson 2023</p>
+                <p class="col-12 col-sm-6 text-center">Contact: <br>
+                jeffrey.nelson.bn6295@code7370.org
+                </p>
+            </div>
+        </div> <!-- end footer container -->
+    </footer>  <!-- end footer -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha512-ldc1sPu1FZ8smgkgp+HwnYyVb1eRn2wEmKrDg1JqPEb02+Ei4kNzDIQ0Uwh0AJVLQFjJoWwG+764x70zy5Tv4A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/js/bootstrap.min.js" integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../javaScript/main.js"></script>
+</body>
+</html>
